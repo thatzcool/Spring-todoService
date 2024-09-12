@@ -58,6 +58,8 @@ dependencies {
 
   implementation 'jstl:jstl:1.2'
 
+  // https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator 파라미터 유효성 검사
+  implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.2.0.Final'
 
 
 
