@@ -42,7 +42,7 @@ public class TodoServiceTests {
         PageResponseDTO<TodoDTO> responseDTO = todoService.getList(pageRequestDTO);
         log.info(responseDTO);
 
-
+       responseDTO.getDtoList().stream().forEach(todoDTO -> log.info(todoDTO));
     }
 
 

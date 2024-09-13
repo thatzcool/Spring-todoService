@@ -1,5 +1,6 @@
 package com.ssg.springtodoservice.controller;
 
+import com.ssg.springtodoservice.dto.PageRequestDTO;
 import com.ssg.springtodoservice.dto.TodoDTO;
 import com.ssg.springtodoservice.service.TodoService;
 import lombok.RequiredArgsConstructor;
@@ -23,14 +24,26 @@ public class TodoController {
     private final TodoService todoService;
 
 
-    @RequestMapping("/list")
-    public void list(Model model){
+//    @RequestMapping("/list")
+//    public void list(Model model){
+//
+//        log.info("todo list.......");
+//        //model.addAttribute("dtoList",todoService.getAll());
+//
+//
+//    }
 
-        log.info("todo list.......");
-        //model.addAttribute("dtoList",todoService.getAll());
-
-
+    @GetMapping("/list")
+    public void list(@Valid PageRequestDTO pageRequestDTO, BindingResult bindingResult, Model model){
+        log.info(pageRequestDTO);
+        if(bindingResult.hasErrors()){
+            pageRequestDTO = PageRequestDTO.builder().build();
+        }
+        model.addAttribute("responseDTO",todoService.getList(pageRequestDTO));
     }
+
+
+
     @GetMapping("/register")
     public void registerGET() {
         log.info("GET todo register.......");
