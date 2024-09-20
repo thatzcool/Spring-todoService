@@ -15,8 +15,8 @@
    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
      <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
       <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ssg?serverTimezone=UTC"></property>
-      <property name="username" value="webuser"></property>
-      <property name="password" value="webuser1234"></property>
+      <property name="username" value=""></property>
+      <property name="password" value=""></property>
       <property name="dataSourceProperties">
              <props>
                  <prop key="cachePrespStmts">true</prop>
